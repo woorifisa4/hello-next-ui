@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const useCheckboxProps = () => {
   const [props, setProps] = useState({
-    label: "Checkbox label",
+    label: 'Checkbox label',
     isSelected: false,
     isDisabled: false,
-    color: "primary",
-    radius: "sm",
-    size: "md",
+    color: 'primary',
+    radius: 'sm',
+    size: 'md',
     lineThrough: false,
-    className: "",
+    className: '',
     scale: 1,
   });
 

@@ -1,20 +1,24 @@
-import PreviewCard from "@/components/PreviewCard";
-import ControlPanel from "@/components/ControlPanel";
-import useCheckboxProps from "../utils/useCheckboxProps";
+import PreviewCard from '@/components/PreviewCard';
+import ControlPanel from '@/components/ControlPanel';
+import useCheckboxProps from '../utils/useCheckboxProps';
 
 const CheckboxPreview = () => {
   const { props, handlePropChange } = useCheckboxProps();
 
   const options = {
-    color: ["primary", "secondary", "success", "warning", "danger"],
-    size: ["sm", "md", "lg"],
-    radius: ["none", "sm", "md", "lg", "full"],
+    color: ['primary', 'secondary', 'success', 'warning', 'danger'],
+    size: ['sm', 'md', 'lg'],
+    radius: ['none', 'sm', 'md', 'lg', 'full'],
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 p-8 max-w-7xl mx-auto">
+    <div className="mx-auto flex max-w-7xl flex-col gap-8 p-8 md:flex-row">
       <PreviewCard props={props} onPropChange={handlePropChange} />
-      <ControlPanel props={props} onPropChange={handlePropChange} options={options} />
+      <ControlPanel
+        props={props}
+        onPropChange={handlePropChange}
+        options={options}
+      />
     </div>
   );
 };
