@@ -1,0 +1,39 @@
+name: Build test server for Woori Node App developers
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Check and Wait for Available Runner
+        run: |
+          for i in {1..6}; do
+            echo "Checking for an available runner... Attempt $i/6"
+            # 원하는 조건으로 체크 추가 (예: Docker나 특정 프로세스 확인)
+            sleep 15
+          done
+          echo "No available runner after 6 attempts. Exiting..."
+          exit 1
+      - name: Proceed with Build
+        run: echo "Runner is ready."
+
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: 하드리셋(기존 이미지 및 컨테이너 삭제)
+        run: |
+          docker ps -q --filter "name=woori-node-test" | xargs -r docker stop
+          docker ps -aq --filter "name=woori-node-test" | xargs -r docker rm
+          docker images -q woori-node-test | xargs -r docker rmi -f
+
+      - name: 테스트용_이미지_빌드
+        run: |
+          docker build -t woori-node-test .
+
+      - name: 테스트서버_3000번포트_가동
+        run: |
+          docker run -d --name woori-node-test -p 3000:80 woori-node-app
