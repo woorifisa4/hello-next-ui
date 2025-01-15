@@ -3,7 +3,7 @@ name: Build test server for Woori Node App developers
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   build-and-deploy:
