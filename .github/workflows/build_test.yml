@@ -18,7 +18,7 @@ jobs:
       - name: install pnpm and build
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: '22'
 
       - name: pnpm 설치중..
         run: npm install -g pnpm
