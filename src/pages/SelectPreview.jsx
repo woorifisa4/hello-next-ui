@@ -1,5 +1,5 @@
-import PreviewSelect from '@/components/PreviewSelect';
-import ControlPanel from '@/components/SelectControlPanel';
+import PreviewSelect from '@/components/select/PreviewSelect';
+import ControlPanel from '@/components/select/SelectControlPanel';
 import useSelectProps from '../utils/useSelectProps';
 
 const SelectPreview = () => {

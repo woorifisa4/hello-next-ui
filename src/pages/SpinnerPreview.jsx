@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import SpinnerControlPanel from '@/components/SpinnerControlPanel.jsx';
-import SpinnerPreviewCard from '@/components/SpinnerPreviewCard.jsx';
+import SpinnerControlPanel from '@/components/spinner/SpinnerControlPanel.jsx';
+import SpinnerPreviewCard from '@/components/spinner/SpinnerPreviewCard.jsx';
 
 const SpinnerPreview = () => {
   const [spinnerProps, setSpinnerProps] = useState({

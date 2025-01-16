@@ -1,5 +1,5 @@
-import PreviewCard from '@/components/PreviewCard';
-import ControlPanel from '@/components/ControlPanel';
+import PreviewCard from '@/components/checkbox/PreviewCard';
+import ControlPanel from '@/components/checkbox/ControlPanel';
 import useCheckboxProps from '../utils/useCheckboxProps';
 
 const CheckboxPreview = () => {

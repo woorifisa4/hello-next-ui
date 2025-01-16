@@ -1,5 +1,5 @@
-import BadgeCard from '../components/BadgeCard';
-import BadgeControlPanel from '../components/BadgeControlPanel';
+import BadgeCard from '../components/badge/BadgeCard.jsx';
+import BadgeControlPanel from '../components/badge/BadgeControlPanel.jsx';
 import useBadgeProps from '../utils/useBadgeProps';
 
 
