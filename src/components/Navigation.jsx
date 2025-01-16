@@ -1,6 +1,7 @@
 // src/components/Navigation.jsx
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import ComponentsDropdownMenu from './ComponentsDropdownMenu';
 
 export const Navigation = () => {
   return (
@@ -8,13 +9,8 @@ export const Navigation = () => {
       <Link to="/" className="text-2xl font-bold text-gray-900">
         Brand
       </Link>
-      <div className="flex gap-8">
-        <Link
-          to="/components/checkbox"
-          className="text-gray-600 hover:text-gray-900"
-        >
-          Components
-        </Link>
+      <div className="flex items-center gap-8">
+        <ComponentsDropdownMenu />
         <a href="#" className="text-gray-600 hover:text-gray-900">
           Pricing
         </a>
