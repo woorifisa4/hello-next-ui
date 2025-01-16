@@ -1,7 +1,7 @@
 import React from 'react';
-import InputControl from './InputControl';
-import SelectControl from './SelectControl';
-import SwitchControl from './SwitchControl';
+import InputControl from '@/components/InputControl';
+import SelectControl from '@/components/SelectControl';
+import SwitchControl from '@/components/SwitchControl';
 
 const PaginationControls = ({ props, onPropChange }) => {
   return (

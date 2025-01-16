@@ -17,8 +17,8 @@ jobs:
 
       - name: 하드리셋(기존 이미지 및 컨테이너 삭제)
         run: |
-          docker rm woori-node-app -f || true
-          docker rmi woori-node-app || true
+          docker rm woori-node-test -f || true
+          docker rmi woori-node-test || true
 
       - name: 테스트용_이미지_빌드
         run: |

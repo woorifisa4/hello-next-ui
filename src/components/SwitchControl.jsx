@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch } from '@nextui-org/react';
-import TooltipHelper from '../TooltipHelper';
+import TooltipHelper from './TooltipHelper';
 
 const SwitchControl = ({
   label,
