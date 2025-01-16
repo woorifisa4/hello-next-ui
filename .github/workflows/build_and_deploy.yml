@@ -26,4 +26,4 @@ jobs:
 
       - name: Run Docker Container
         run: |
-          docker run -d --name woori-node-app -p 80:80 woori-node-app
+          docker run -d --name woori-node-app -p 80:80 -p 443:443 -v /etc/letsencrypt/live/nextui.woorifisa.store/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro -v /etc/letsencrypt/live/nextui.woorifisa.store/privkey.pem:/etc/nginx/certs/privkey.pem:ro woori-node-app

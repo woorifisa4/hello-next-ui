@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import Preview from '@/components/Preview.jsx';
-import { Input, Spinner } from '@nextui-org/react';
+import { Spinner } from '@nextui-org/react';
 import ControlPanel from '@/components/ControlPanel';
+import SelectControl from '@/components/SelectControl';
+import TextInput from '@/components/TextInput';
 
 const SpinnerPreview = () => {
   const [spinnerProps, setSpinnerProps] = useState({
@@ -31,6 +33,17 @@ const SpinnerPreview = () => {
     ],
   };
 
+  const generatedCode = `import { Spinner } from '@nextui-org/react';
+
+const CustomSpinner = () => (
+  <Spinner
+    size="${spinnerProps.size}"
+    color="${spinnerProps.color}"
+    label="${spinnerProps.label}"
+    labelColor="${spinnerProps.labelColor}"
+  />
+);`;
+
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8 p-8 md:flex-row">
       <Preview title="Spinner">
@@ -50,55 +63,41 @@ const SpinnerPreview = () => {
           </div>
         </div>
       </Preview>
-      <ControlPanel name="Spinner Controls">
+      <ControlPanel name="Spinner Controls" generatedCode={generatedCode}>
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
-            <label className="text-sm text-default-700">Size</label>
-            <select
-              className="w-full rounded-lg border border-gray-200 p-2"
-              value={spinnerProps.size}
-              onChange={(e) => handlePropChange('size', e.target.value)}
-            >
-              {options.size.map((size) => (
-                <option key={size} value={size}>
-                  {size}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="flex flex-col gap-2">
-            <label className="text-sm text-default-700">Color</label>
-            <select
-              className="w-full rounded-lg border border-gray-200 p-2"
-              value={spinnerProps.color}
-              onChange={(e) => handlePropChange('color', e.target.value)}
-            >
-              {options.color.map((color) => (
-                <option key={color} value={color}>
-                  {color}
-                </option>
-              ))}
-            </select>
-          </div>
-          <Input
-            label="Label"
-            value={spinnerProps.label}
-            onChange={(e) => handlePropChange('label', e.target.value)}
+          <SelectControl
+            label="Size"
+            tooltip="Select the size of the spinner"
+            options={options.size.map((size) => ({ key: size, label: size }))}
+            selectedKey={spinnerProps.size}
+            onChange={(value) => handlePropChange('size', value)}
           />
-          <div className="flex flex-col gap-2">
-            <label className="text-sm text-default-700">Label Color</label>
-            <select
-              className="w-full rounded-lg border border-gray-200 p-2"
-              value={spinnerProps.labelColor}
-              onChange={(e) => handlePropChange('labelColor', e.target.value)}
-            >
-              {options.labelColor.map((color) => (
-                <option key={color} value={color}>
-                  {color}
-                </option>
-              ))}
-            </select>
-          </div>
+          <SelectControl
+            label="Color"
+            tooltip="Select the color of the spinner"
+            options={options.color.map((color) => ({
+              key: color,
+              label: color,
+            }))}
+            selectedKey={spinnerProps.color}
+            onChange={(value) => handlePropChange('color', value)}
+          />
+          <TextInput
+            label="Label"
+            tooltip="Set a label for the spinner"
+            value={spinnerProps.label}
+            onChange={(value) => handlePropChange('label', value)}
+          />
+          <SelectControl
+            label="Label Color"
+            tooltip="Select the color of the label"
+            options={options.labelColor.map((color) => ({
+              key: color,
+              label: color,
+            }))}
+            selectedKey={spinnerProps.labelColor}
+            onChange={(value) => handlePropChange('labelColor', value)}
+          />
         </div>
       </ControlPanel>
     </div>

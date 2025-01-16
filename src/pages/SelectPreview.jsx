@@ -17,6 +17,47 @@ const SelectPreview = () => {
     labelPlacement: ['inside', 'outside', 'outside-left'],
   };
 
+  const generatedCode = `import { Select, SelectItem } from '@nextui-org/react';
+
+const CustomSelect = () => {
+  return (
+    <Select
+      items={[
+        ${props.items
+          .map((item) => `{ value: "${item.value}", label: "${item.label}" }`)
+          .join(',\n        ')}
+      ]}
+      variant="${props.variant}"
+      label="${props.label}"
+      placeholder="${props.placeholder}"
+      selectionMode="single"
+      className="max-w-xs ${props.className}"
+      selectedKeys={${JSON.stringify(props.selectedKeys)}}
+      onSelectionChange={(keys) => console.log('Selected keys:', keys)}
+      color="${props.color}"
+      size="${props.size}"
+      radius="${props.radius}"
+      labelPlacement="${props.labelPlacement}"
+      isDisabled={${props.isDisabled}}
+      isRequired={${props.isRequired}}
+      isInvalid={${props.isInvalid}}
+      itemHeight={40}
+      maxListboxHeight={200}
+      fullWidth
+    >
+      {[
+        ${props.items
+          .map(
+            (item) =>
+              `<SelectItem key="${item.value}">${item.label}</SelectItem>`
+          )
+          .join(',\n        ')}
+      ]}
+    </Select>
+  );
+};
+`;
+
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8 p-8 md:flex-row">
       <Preview>
@@ -61,7 +102,7 @@ const SelectPreview = () => {
           </div>
         </div>
       </Preview>
-      <ControlPanel name="Select" generatedCode={props.generatedCode}>
+      <ControlPanel name="Select" generatedCode={generatedCode}>
         <div className="flex flex-col gap-8">
           <TextInput
             label="Label"
