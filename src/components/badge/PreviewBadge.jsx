@@ -2,7 +2,7 @@
   import { Card, CardBody } from '@nextui-org/react';
   import { Badge, Avatar } from '@nextui-org/react';
 
-  const BadgeCard = ({ props, options}) => {
+  const PreviewBadge = ({ props, options}) => {
     // Avatar 데이터를 배열로 정의
     const avatars = [
       "https://i.pravatar.cc/300?u=a042581f4e29026709d",
@@ -38,4 +38,4 @@
     );
   };
 
-  export default BadgeCard;
+  export default PreviewBadge;

@@ -86,7 +86,7 @@
      - 폴더 이름: `camelCase` 또는 `kebab-case`
      - 예시:
        ```plaintext
-       ControlPanel.jsx, useCheckboxProps.js
+       CheckboxControlPanel.jsx, useCheckboxProps.js
        ```
 
    - **TailwindCSS 클래스**:

@@ -1,8 +1,8 @@
-import PreviewCard from '@/components/checkbox/PreviewCard';
-import ControlPanel from '@/components/checkbox/ControlPanel';
+import PreviewCheckbox from '@/components/checkbox/PreviewCheckbox';
+import CheckboxControlPanel from '@/components/checkbox/CheckboxControlPanel';
 import useCheckboxProps from '../utils/useCheckboxProps';
 
-const CheckboxPreview = () => {
+const PreviewCheckboxPage = () => {
   const { props, handlePropChange } = useCheckboxProps();
 
   const options = {
@@ -13,8 +13,8 @@ const CheckboxPreview = () => {
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8 p-8 md:flex-row">
-      <PreviewCard props={props} onPropChange={handlePropChange} />
-      <ControlPanel
+      <PreviewCheckbox props={props} onPropChange={handlePropChange} />
+      <CheckboxControlPanel
         props={props}
         onPropChange={handlePropChange}
         options={options}
@@ -23,4 +23,4 @@ const CheckboxPreview = () => {
   );
 };
 
-export default CheckboxPreview;
+export default PreviewCheckboxPage;

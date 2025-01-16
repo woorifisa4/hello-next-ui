@@ -1,9 +1,9 @@
-import BadgeCard from '../components/badge/BadgeCard.jsx';
+import PreviewBadge from '../components/badge/PreviewBadge.jsx';
 import BadgeControlPanel from '../components/badge/BadgeControlPanel.jsx';
 import useBadgeProps from '../utils/useBadgeProps';
 
 
-const BadgePreview = () => {
+const PreviewBadgePage = () => {
 
   const { props, handlePropChange } = useBadgeProps();
 
@@ -61,7 +61,7 @@ const BadgePreview = () => {
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8 p-8 md:flex-row">
-      <BadgeCard
+      <PreviewBadge
         props={props}
         onPropChange={handlePropChange}
         options={options}
@@ -75,4 +75,4 @@ const BadgePreview = () => {
   );
 };
 
-export default BadgePreview;
+export default PreviewBadgePage;

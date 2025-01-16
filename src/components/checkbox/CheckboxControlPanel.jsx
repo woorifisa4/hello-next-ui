@@ -1,7 +1,7 @@
 import { Card, CardBody } from '@nextui-org/react';
 import { Input, Switch } from '@nextui-org/react';
 
-const ControlPanel = ({ props, onPropChange, options }) => {
+const CheckboxControlPanel = ({ props, onPropChange, options }) => {
   return (
     <Card className="w-full md:w-96">
       <CardBody>
@@ -98,4 +98,4 @@ const ControlPanel = ({ props, onPropChange, options }) => {
   );
 };
 
-export default ControlPanel;
+export default CheckboxControlPanel;

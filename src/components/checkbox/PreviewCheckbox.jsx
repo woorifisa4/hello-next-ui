@@ -1,7 +1,7 @@
 import { Card, CardBody } from '@nextui-org/react';
 import { Checkbox } from '@nextui-org/react';
 
-const PreviewCard = ({ props, onPropChange }) => {
+const PreviewCheckbox = ({ props, onPropChange }) => {
   return (
     <Card className="flex-1">
       <CardBody>
@@ -29,4 +29,4 @@ const PreviewCard = ({ props, onPropChange }) => {
   );
 };
 
-export default PreviewCard;
+export default PreviewCheckbox;

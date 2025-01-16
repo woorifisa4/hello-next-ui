@@ -1,8 +1,8 @@
 import PreviewSelect from '@/components/select/PreviewSelect';
-import ControlPanel from '@/components/select/SelectControlPanel';
+import SelectControlPanel from '@/components/select/SelectControlPanel';
 import useSelectProps from '../utils/useSelectProps';
 
-const SelectPreview = () => {
+const PreviewSelectPage = () => {
   const { props, handlePropChange } = useSelectProps();
 
   const options = {
@@ -16,7 +16,7 @@ const SelectPreview = () => {
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8 p-8 md:flex-row">
       <PreviewSelect props={props} onPropChange={handlePropChange} />
-      <ControlPanel
+      <SelectControlPanel
         props={props}
         onPropChange={handlePropChange}
         options={options}
@@ -25,4 +25,4 @@ const SelectPreview = () => {
   );
 };
 
-export default SelectPreview;
+export default PreviewSelectPage;

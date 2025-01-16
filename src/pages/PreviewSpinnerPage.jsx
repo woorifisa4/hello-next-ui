@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import SpinnerControlPanel from '@/components/spinner/SpinnerControlPanel.jsx';
-import SpinnerPreviewCard from '@/components/spinner/SpinnerPreviewCard.jsx';
+import PreviewSpinner from '@/components/spinner/PreviewSpinner.jsx';
 
-const SpinnerPreview = () => {
+const PreviewSpinnerPage = () => {
   const [spinnerProps, setSpinnerProps] = useState({
     size: 'md',
     color: 'default',
@@ -25,7 +25,7 @@ const SpinnerPreview = () => {
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8 p-8 md:flex-row">
-      <SpinnerPreviewCard props={spinnerProps} />
+      <PreviewSpinner props={spinnerProps} />
       <SpinnerControlPanel
         props={spinnerProps}
         onPropChange={handlePropChange}
@@ -35,4 +35,4 @@ const SpinnerPreview = () => {
   );
 };
 
-export default SpinnerPreview;
+export default PreviewSpinnerPage;
