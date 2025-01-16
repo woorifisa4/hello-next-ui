@@ -1,4 +1,7 @@
-import { Card, CardBody, Switch } from '@nextui-org/react'; // Input 제거
+import { Card, CardBody } from '@nextui-org/react';
+import TextInput from './TextInput';
+import SelectControl from './pagination/SelectControl';
+import SwitchControl from './pagination/SwitchControl';
 
 const SelectControlPanel = ({ props, onPropChange, options }) => {
   return (
@@ -6,69 +9,45 @@ const SelectControlPanel = ({ props, onPropChange, options }) => {
       <CardBody>
         <h2 className="mb-6 text-2xl font-bold">Controls</h2>
         <div className="flex flex-col gap-8">
-          {/* Label Input */}
-          <div className="flex flex-col gap-1">
-            <label className="text-default-700 pb-1 text-xl">Label</label>
-            <input
-              type="text"
-              value={props.label}
-              onChange={(e) => onPropChange('label', e.target.value)}
-              className="bg-default-100 border-default-200 focus:border-primary h-12 w-full rounded-lg border-2 px-3 text-xl focus:outline-none"
-            />
-          </div>
+          <TextInput
+            label="Label"
+            value={props.label}
+            onChange={(value) => onPropChange('label', value)}
+          />
 
-          {/* Placeholder Input */}
-          <div className="flex flex-col gap-1">
-            <label className="text-default-700 pb-1 text-xl">Placeholder</label>
-            <input
-              type="text"
-              value={props.placeholder}
-              onChange={(e) => onPropChange('placeholder', e.target.value)}
-              className="bg-default-100 border-default-200 focus:border-primary h-12 w-full rounded-lg border-2 px-3 text-xl focus:outline-none"
-            />
-          </div>
+          <TextInput
+            label="Placeholder"
+            value={props.placeholder}
+            onChange={(value) => onPropChange('placeholder', value)}
+          />
 
           {['variant', 'color', 'size', 'radius', 'labelPlacement'].map(
             (prop) => (
-              <div key={prop} className="flex flex-col gap-1">
-                <label className="text-default-700 pb-1 text-xl">
-                  {prop.charAt(0).toUpperCase() + prop.slice(1)}
-                </label>
-                <select
-                  value={props[prop]}
-                  onChange={(e) => onPropChange(prop, e.target.value)}
-                  className="bg-default-100 border-default-200 focus:border-primary h-12 w-full rounded-lg border-2 px-3 text-xl focus:outline-none"
-                >
-                  {options[prop].map((option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </div>
+              <SelectControl
+                key={prop}
+                label={prop.charAt(0).toUpperCase() + prop.slice(1)}
+                tooltip={prop}
+                selectedKey={props[prop]}
+                options={options[prop].map((option) => ({
+                  key: option,
+                  label: option,
+                }))}
+                onChange={(value) => onPropChange(prop, value)}
+              />
             )
           )}
 
-          {/* Custom className Input */}
-          <div className="flex flex-col gap-1">
-            <label className="text-default-700 pb-1 text-xl">
-              Custom className
-            </label>
-            <input
-              type="text"
-              value={props.className}
-              onChange={(e) => onPropChange('className', e.target.value)}
-              className="bg-default-100 border-default-200 focus:border-primary h-12 w-full rounded-lg border-2 px-3 text-xl focus:outline-none"
-            />
-          </div>
+          <TextInput
+            label="Custom className"
+            value={props.className}
+            onChange={(value) => onPropChange('className', value)}
+          />
 
-          <Switch
+          <SwitchControl
+            label="Disabled"
             isSelected={props.isDisabled}
-            onChange={(e) => onPropChange('isDisabled', e.target.checked)}
-            className="text-xl"
-          >
-            Disabled
-          </Switch>
+            onChange={(checked) => onPropChange('isDisabled', checked)}
+          />
         </div>
       </CardBody>
     </Card>
