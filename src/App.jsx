@@ -4,6 +4,7 @@ import { NextUIProvider } from '@nextui-org/react';
 import LandingPage from '@/pages/LandingPage';
 import CheckboxPreview from '@/pages/CheckboxPreview';
 import SpinnerPreview from '@/pages/SpinnerPreview.jsx';
+import SelectPreview from '@/pages/SelectPreview';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
             <Route path="/" element={<LandingPage />} />
             <Route path="/components/checkbox" element={<CheckboxPreview />} />
             <Route path="/spinner" element={<SpinnerPreview />} />
+            <Route path="/select" element={<SelectPreview />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
