@@ -2,12 +2,10 @@ import BadgeCard from '@/components/badge/BadgeCard';
 import BadgeControlPanel from '@/components/badge/BadgeControlPanel';
 import useBadgeProps from '@/utils/useBadgeProps';
 
-
 const BadgePreview = () => {
-
   const { props, handlePropChange } = useBadgeProps();
 
-  const NotificationIcon = ({size, height, width, ...props}) => {
+  const NotificationIcon = ({ size, height, width, ...props }) => {
     return (
       <svg
         fill="none"
@@ -26,8 +24,8 @@ const BadgePreview = () => {
       </svg>
     );
   };
-  
-  const CheckIcon = ({size, height, width, ...props}) => {
+
+  const CheckIcon = ({ size, height, width, ...props }) => {
     return (
       <svg
         fill="none"
@@ -50,9 +48,10 @@ const BadgePreview = () => {
 
   const options = {
     color: ['default', 'primary', 'secondary', 'success', 'warning', 'danger'],
-    content: [ {label: 'default'},
+    content: [
+      { label: 'default' },
       { label: 'Notification', icon: NotificationIcon },
-      { label: 'Check', icon: CheckIcon }, 
+      { label: 'Check', icon: CheckIcon },
     ],
     size: ['sm', 'md', 'lg'],
     variant: ['solid', 'flat', 'faded', 'shadow'],
