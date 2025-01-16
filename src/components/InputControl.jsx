@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input } from '@nextui-org/react';
-import TooltipHelper from '../TooltipHelper';
+import TooltipHelper from '@/components/TooltipHelper';
 
 const InputControl = ({ label, tooltip, type, value, minValue, onChange }) => {
   const handleChange = (e) => {

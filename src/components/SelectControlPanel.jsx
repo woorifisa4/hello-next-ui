@@ -8,36 +8,36 @@ const SelectControlPanel = ({ props, onPropChange, options }) => {
         <div className="flex flex-col gap-8">
           {/* Label Input */}
           <div className="flex flex-col gap-1">
-            <label className="text-default-700 pb-1 text-xl">Label</label>
+            <label className="pb-1 text-xl text-default-700">Label</label>
             <input
               type="text"
               value={props.label}
               onChange={(e) => onPropChange('label', e.target.value)}
-              className="bg-default-100 border-default-200 focus:border-primary h-12 w-full rounded-lg border-2 px-3 text-xl focus:outline-none"
+              className="h-12 w-full rounded-lg border-2 border-default-200 bg-default-100 px-3 text-xl focus:border-primary focus:outline-none"
             />
           </div>
 
           {/* Placeholder Input */}
           <div className="flex flex-col gap-1">
-            <label className="text-default-700 pb-1 text-xl">Placeholder</label>
+            <label className="pb-1 text-xl text-default-700">Placeholder</label>
             <input
               type="text"
               value={props.placeholder}
               onChange={(e) => onPropChange('placeholder', e.target.value)}
-              className="bg-default-100 border-default-200 focus:border-primary h-12 w-full rounded-lg border-2 px-3 text-xl focus:outline-none"
+              className="h-12 w-full rounded-lg border-2 border-default-200 bg-default-100 px-3 text-xl focus:border-primary focus:outline-none"
             />
           </div>
 
           {['variant', 'color', 'size', 'radius', 'labelPlacement'].map(
             (prop) => (
               <div key={prop} className="flex flex-col gap-1">
-                <label className="text-default-700 pb-1 text-xl">
+                <label className="pb-1 text-xl text-default-700">
                   {prop.charAt(0).toUpperCase() + prop.slice(1)}
                 </label>
                 <select
                   value={props[prop]}
                   onChange={(e) => onPropChange(prop, e.target.value)}
-                  className="bg-default-100 border-default-200 focus:border-primary h-12 w-full rounded-lg border-2 px-3 text-xl focus:outline-none"
+                  className="h-12 w-full rounded-lg border-2 border-default-200 bg-default-100 px-3 text-xl focus:border-primary focus:outline-none"
                 >
                   {options[prop].map((option) => (
                     <option key={option} value={option}>
@@ -51,14 +51,14 @@ const SelectControlPanel = ({ props, onPropChange, options }) => {
 
           {/* Custom className Input */}
           <div className="flex flex-col gap-1">
-            <label className="text-default-700 pb-1 text-xl">
+            <label className="pb-1 text-xl text-default-700">
               Custom className
             </label>
             <input
               type="text"
               value={props.className}
               onChange={(e) => onPropChange('className', e.target.value)}
-              className="bg-default-100 border-default-200 focus:border-primary h-12 w-full rounded-lg border-2 px-3 text-xl focus:outline-none"
+              className="h-12 w-full rounded-lg border-2 border-default-200 bg-default-100 px-3 text-xl focus:border-primary focus:outline-none"
             />
           </div>
 
