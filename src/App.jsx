@@ -6,7 +6,7 @@ import CheckboxPreview from '@/pages/CheckboxPreview';
 import PaginationPreview from '@/pages/PaginationPreview';
 import BadgePreview from '@/pages/BadgePreview';
 import SpinnerPreview from '@/pages/SpinnerPreview.jsx';
-import SelectPreview from '@/pages/SelectPreview';
+import PreviewSelectPage from '@/pages/PreviewSelectPage.jsx';
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
             <Route path="/pagination" element={<PaginationPreview />} />
             <Route path="/badge" element={<BadgePreview />} />
             <Route path="/spinner" element={<SpinnerPreview />} />
-            <Route path="/select" element={<SelectPreview />} />
+            <Route path="/select" element={<PreviewSelectPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
