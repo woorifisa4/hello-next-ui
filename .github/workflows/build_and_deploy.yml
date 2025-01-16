@@ -1,4 +1,4 @@
-name: Build test for Woori Node App developers
+name: Build and deploy for Woori Node App developers
 
 on:
   push:
@@ -17,8 +17,8 @@ jobs:
 
       - name: Clean up old Docker containers and images
         run: |
-          docker rm woori-node-app -f
-          docker rmi woori-node-app
+          docker rm woori-node-app -f || true
+          docker rmi woori-node-app || true
 
       - name: Build Docker Image
         run: |
