@@ -6,7 +6,7 @@ import CheckboxPreview from '@/pages/CheckboxPreview';
 import PaginationPreview from '@/pages/PaginationPreview';
 import BadgePreview from '@/pages/BadgePreview';
 import SpinnerPreview from '@/pages/SpinnerPreview.jsx';
-import SelectPreview from '@/pages/SelectPreview';
+import SelectPreview from '@/pages/SelectPreview.jsx';
 
 const App = () => {
   return (

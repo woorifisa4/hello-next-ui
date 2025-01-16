@@ -1,14 +1,14 @@
 import React from 'react';
 import { Badge, Avatar } from '@nextui-org/react';
-import Preview from '../Preview';
+import Preview from '@/components/Preview';
 
 const BadgeCard = ({ props, options }) => {
   // Avatar 데이터를 배열로 정의
   const avatars = [
-    'https://i.pravatar.cc/300?u=a042581f4e29026709d',
-    'https://i.pravatar.cc/150?u=a042f81f4e29026024d',
-    'https://i.pravatar.cc/150?u=a04258a2462d826712d',
-    'https://i.pravatar.cc/300?u=a042581f4e290267072',
+    'https://avatars.githubusercontent.com/u/45845547?v=4',
+    'https://avatars.githubusercontent.com/u/146312456?v=4',
+    'https://avatars.githubusercontent.com/u/83891638?v=4',
+    'https://avatars.githubusercontent.com/u/152269806?v=4',
   ];
 
   const SelectedIcon = options.content.find(
