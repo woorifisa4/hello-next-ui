@@ -1,6 +1,6 @@
 // src/components/Navigation.jsx
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const Navigation = () => {
   return (
