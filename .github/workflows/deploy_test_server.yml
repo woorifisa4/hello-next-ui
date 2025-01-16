@@ -15,16 +15,33 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Check for Changes in Relevant Directories
+        id: changes
+        run: |
+          # Check for changes in the Dockerfile or src directory
+          if git diff --quiet HEAD^ HEAD -- Dockerfile src/; then
+            echo "no_changes=true" >> $GITHUB_ENV
+          else
+            echo "no_changes=false" >> $GITHUB_ENV
+          fi
+
       - name: 하드리셋(기존 이미지 및 컨테이너 삭제)
+        if: env.no_changes == 'false'
         run: |
           docker ps -q --filter "name=woori-node-test" | xargs -r docker stop
           docker ps -aq --filter "name=woori-node-test" | xargs -r docker rm
           docker images -q woori-node-test | xargs -r docker rmi -f
 
       - name: 테스트용_이미지_빌드
+        if: env.no_changes == 'false'
         run: |
           docker build -t woori-node-test .
 
       - name: 테스트서버_3000번포트_가동
+        if: env.no_changes == 'false'
         run: |
           docker run -d --name woori-node-test -p 3000:80 woori-node-test
+
+      - name: No Changes Detected
+        if: env.no_changes == 'true'
+        run: echo "No changes detected. Skipping build and deployment."
