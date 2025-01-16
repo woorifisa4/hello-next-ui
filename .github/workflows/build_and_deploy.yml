@@ -9,6 +9,15 @@ jobs:
   build-and-deploy:
     runs-on: self-hosted
     steps:
+      - name: Check and Wait for Available Runner
+        run: |
+          for i in {1..6}; do
+            echo "Checking for an available runner... Attempt $i/6"
+            # 원하는 조건으로 체크 추가 (예: Docker나 특정 프로세스 확인)
+            sleep 15
+          done
+          echo "No available runner after 6 attempts. Exiting..."
+          exit 1
       - name: Proceed with Build
         run: echo "Runner is ready."
 

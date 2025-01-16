@@ -8,7 +8,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+  build-and-deploy:
+    runs-on: self-hosted # Runner가 설치된 VM에서 실행
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
