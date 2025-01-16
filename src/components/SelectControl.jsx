@@ -1,6 +1,6 @@
 import React from 'react';
 import { Select, SelectItem } from '@nextui-org/react';
-import TooltipHelper from '../TooltipHelper';
+import TooltipHelper from '@/components/TooltipHelper';
 
 const SelectControl = ({ label, tooltip, options, selectedKey, onChange }) => (
   <div className="flex items-center gap-2">
