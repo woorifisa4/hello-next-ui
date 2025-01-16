@@ -1,4 +1,7 @@
-#
+# 🙌 Hello NextUI ! 🙌 
+<br>
+
+![NextUI.image](https://nextui.org/_next/image?url=https%3A%2F%2Fheroui-assets.nyc3.cdn.digitaloceanspaces.com%2Fimages%2Fnextui-banner.jpeg&w=1920&q=100)
 
 <br>
 
