@@ -17,9 +17,8 @@ jobs:
 
       - name: Clean up old Docker containers and images
         run: |
-          docker ps -q --filter "name=woori-node-app" | xargs -r docker stop
-          docker ps -aq --filter "name=woori-node-app" | xargs -r docker rm
-          docker images -q woori-node-app | xargs -r docker rmi -f
+          docker rm woori-node-app -f
+          docker rmi woori-node-app
 
       - name: Build Docker Image
         run: |
