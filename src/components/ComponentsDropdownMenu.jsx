@@ -10,9 +10,10 @@ const ComponentsDropdownMenu = () => {
   const navigate = useNavigate();
 
   const components = [
-    { key: 'select', label: 'Select', path: '/select' },
-    { key: 'spinner', label: 'Spinner', path: '/spinner' },
+    { key: 'select', label: 'Select', path: '/components/select' },
+    { key: 'spinner', label: 'Spinner', path: '/components/spinner' },
     { key: 'checkbox', label: 'Checkbox', path: '/components/checkbox' },
+    { key: 'badge', label: 'Badge', path: '/components/badge' },
   ];
 
   const handleSelect = (path) => {

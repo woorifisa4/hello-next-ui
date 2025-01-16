@@ -16,9 +16,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/components/checkbox" element={<PreviewCheckboxPage />} />
-            <Route path="/badge" element={<PreviewBadgePage />} />
-            <Route path="/spinner" element={<PreviewSpinnerPage />} />
-            <Route path="/select" element={<PreviewSelectPage />} />
+            <Route path="/components/badge" element={<PreviewBadgePage />} />
+            <Route path="/components/spinner" element={<PreviewSpinnerPage />} />
+            <Route path="/components/select" element={<PreviewSelectPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
