@@ -1,7 +1,7 @@
 import { Card, CardBody } from '@nextui-org/react';
-import TextInput from './TextInput';
-import SelectControl from './pagination/SelectControl';
-import SwitchControl from './pagination/SwitchControl';
+import TextInput from '../TextInput';
+import SelectControl from '../pagination/SelectControl';
+import SwitchControl from '../pagination/SwitchControl';
 
 const SelectControlPanel = ({ props, onPropChange, options }) => {
   return (
