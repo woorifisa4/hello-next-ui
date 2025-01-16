@@ -26,4 +26,4 @@ jobs:
 
       - name: 테스트서버_3000번포트_가동
         run: |
-          docker run -d --name woori-node-test -p 3000:80 woori-node-test
+          docker run -d --name woori-node-test -p 3000:80 -v /etc/letsencrypt/live/nextui.woorifisa.store/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro -v /etc/letsencrypt/live/nextui.woorifisa.store/privkey.pem:/etc/nginx/certs/privkey.pem:ro woori-node-test
