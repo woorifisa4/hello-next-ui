@@ -3,6 +3,7 @@ import { Navigation } from '@/components/Navigation';
 import { NextUIProvider } from '@nextui-org/react';
 import LandingPage from '@/pages/LandingPage';
 import CheckboxPreview from '@/pages/CheckboxPreview';
+import BadgePreview from '@/pages/BadgePreview';
 import SpinnerPreview from '@/pages/SpinnerPreview.jsx';
 import SelectPreview from '@/pages/SelectPreview';
 
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/components/checkbox" element={<CheckboxPreview />} />
+            <Route path="/badge" element={<BadgePreview />} />
             <Route path="/spinner" element={<SpinnerPreview />} />
             <Route path="/select" element={<SelectPreview />} />
             <Route path="*" element={<Navigate to="/" replace />} />
