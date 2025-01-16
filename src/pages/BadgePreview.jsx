@@ -1,6 +1,6 @@
-import BadgeCard from '../components/BadgeCard';
-import BadgeControlPanel from '../components/BadgeControlPanel';
-import useBadgeProps from '../utils/useBadgeProps';
+import BadgeCard from '@/components/badge/BadgeCard';
+import BadgeControlPanel from '@/components/badge/BadgeControlPanel';
+import useBadgeProps from '@/utils/useBadgeProps';
 
 
 const BadgePreview = () => {
