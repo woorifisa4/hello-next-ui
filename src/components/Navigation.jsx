@@ -9,14 +9,8 @@ export const Navigation = () => {
       <Link to="/" className="text-2xl font-bold text-gray-900">
         Brand
       </Link>
-      <div className="flex items-center gap-8">
+      <div className="me-8 ml-auto flex items-center gap-8">
         <ComponentsDropdownMenu />
-        <a href="#" className="text-gray-600 hover:text-gray-900">
-          Pricing
-        </a>
-        <a href="#" className="text-gray-600 hover:text-gray-900">
-          About
-        </a>
       </div>
     </nav>
   );
