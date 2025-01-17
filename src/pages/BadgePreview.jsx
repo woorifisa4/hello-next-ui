@@ -110,7 +110,7 @@ const BadgeExample = () => (
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8 p-8 md:flex-row">
       <Preview title="Preview">
-        <div className="flex h-full items-center justify-center">
+        <div className="flex items-center justify-center">
           <div className="flex items-center gap-3">
             {avatars.map((src, index) => (
               <Badge
