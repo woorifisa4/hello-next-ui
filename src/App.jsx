@@ -6,6 +6,7 @@ import PaginationPreview from '@/pages/PaginationPreview';
 import BadgePreview from '@/pages/BadgePreview';
 import SpinnerPreview from '@/pages/SpinnerPreview.jsx';
 import SelectPreview from '@/pages/SelectPreview.jsx';
+import { Footer } from '@/components/Footer';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/spinner" element={<SpinnerPreview />} />
             <Route path="/select" element={<SelectPreview />} />
           </Routes>
+          <Footer />
         </div>
       </BrowserRouter>
     </NextUIProvider>

@@ -8,7 +8,6 @@ import {
   Slider,
   Input,
 } from '@nextui-org/react';
-import { Footer } from '@/components/Footer';
 import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
@@ -51,7 +50,7 @@ const LandingPage = () => {
       <div className="mx-auto max-w-7xl px-6 py-24">
         <div className="text-center">
           <h1 className="mb-6 text-6xl font-bold text-gray-900">
-            React 상태 관리 실습
+            Next UI 실습하기
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-xl text-gray-600">
             NextUI 컴포넌트의 속성값을 실시간으로 조정하면서 실습해보세요. 아래
@@ -179,7 +178,6 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
